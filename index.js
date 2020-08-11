@@ -46,10 +46,20 @@ function getParksInfo(query, maxResults=10, stateSearch) {
       }
       throw new Error(response.statusText);
     })
-    .then(responseJson => displayResults(responseJson))
+    .then(responseJson => {
+        if (responseJson.data.length === 0) {
+            throw new Error('Please check the state code')
+        }
+        displayResults(responseJson)
+    })
     .catch(err => {
       $('#js-error-message').text(`Something went wrong: ${err.message}`);
     });
+}
+
+function clearPage () {
+    $('results').empty();
+    $('#js-error-message').empty();
 }
 
 function watchForm() {
@@ -59,6 +69,7 @@ function watchForm() {
     const maxResults = $('#js-max-results').val();
     const stateSearch = $('#js-state-search-term').val();
     getParksInfo(searchTerm, maxResults, stateSearch);
+    clearPage();
   });
 }
 

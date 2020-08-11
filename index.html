@@ -13,23 +13,25 @@
         <h1>US National Parks finder</h1>
 
         <form id="js-form">
-            <label for="search-term">Search a term to find some parks!</label>
-            <input type="text" name="search-term" id="js-search-term" required>
-            <br>
-            <label for="search-term">What state(s) do you want to search in?</label>
+            <label>What state(s) do you want to search in?</label>
             <input type="text" name="state-search-term" id="js-state-search-term" placeholder="Format as CA, AZ, etc." required>
             <br>
-            <label for="max-results">Maximum amount parks you want to see</label>
+            <label>Include a term to narrow parks results!</label>
+            <input type="text" name="search-term" id="js-search-term" placeholder="Optional">
+            <br>
+            <label>Maximum amount parks you want to see</label>
             <input type="number" name="max-results" id="js-max-results" value="10">
 
             <input type="submit" value="Go!">
         </form>
 
         <p id="js-error-message" class="error-message"></p>
-        <section id="results" class="hidden">
+        <section id="results" class="results hidden">
           <h2>Search results</h2>
           <ul id="results-list">
           </ul>
+          <p>Is the park you are looking for missing from this list?</p>
+          <p>Try increasing the list size narrowing your search with a term or fewer states.</p>
         </section>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
