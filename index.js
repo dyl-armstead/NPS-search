@@ -10,7 +10,7 @@ function formatQueryParams(params) {
 
 function displayResults(responseJson) {
   // if there are previous results, remove them
-  console.log(responseJson);
+  // console.log(responseJson);
   $('#results-list').empty();
   // iterate through the items array
   for (let i = 0; i < responseJson.data.length; i++){
@@ -37,7 +37,7 @@ function getParksInfo(query, maxResults=10, stateSearch) {
   const queryString = formatQueryParams(params)
   const url = searchURL + '?' + queryString;
 
-  console.log(url);
+  // console.log(url);
 
   fetch(url)
     .then(response => {
