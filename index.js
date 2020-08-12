@@ -53,6 +53,7 @@ function getParksInfo(query, maxResults=10, stateSearch) {
         displayResults(responseJson)
     })
     .catch(err => {
+      $('#results').addClass('hidden');
       $('#js-error-message').text(`Something went wrong: ${err.message}`);
     });
 }
